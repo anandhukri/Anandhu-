@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Info</title>
-
-</head>
-<body>
+<html>
+<main>
 <div class="container">
-  <h1>Hello,my name is Anandhu</h1>
-  <p>I am 20 years old.</p>
+  <h1> Movies list</h1>
+  <div >
+    <h2>Movies I watched</h2>
+    <div *ngFor="let movie of movie1">
+      <h3 *ngIf="movie.alreadyWatched">{{movie.name}}</h3>
+      <p *ngIf="movie.alreadyWatched">Production company: {{movie.productionCompany}} </p>
+      <p *ngIf="movie.alreadyWatched">Director: {{movie.director}}</p>
+      <p *ngIf="movie.alreadyWatched">Country: {{movie.country}}</p>
+      <p *ngIf="movie.alreadyWatched">Year: {{movie.year}}</p>
+    </div>
+    <h2>Movies I did not watch</h2>
+    <div *ngFor="let movie of movie1">
+      <h3 *ngIf="!movie.alreadyWatched">{{movie.name}}</h3>
+      <p *ngIf="!movie.alreadyWatched">Production company: {{movie.productionCompany}} </p>
+      <p *ngIf="!movie.alreadyWatched">Director: {{movie.director}}</p>
+      <p *ngIf="!movie.alreadyWatched">Country: {{movie.country}}</p>
+      <p *ngIf="!movie.alreadyWatched">Year: {{movie.year}}</p>
+    </div>
+  </div>
+
+
+
 </div>
-</body>
+</main>
+
 </html>
