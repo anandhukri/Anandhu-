@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Movies} from "../Shared/Models/movies";
 
 @Component({
   selector: 'app-movie-list-item',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './movie-list-item.component.css'
 })
 export class MovieListItemComponent {
+  @Input() movie!:Movies;
 
 }
