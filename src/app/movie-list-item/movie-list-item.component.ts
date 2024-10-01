@@ -16,5 +16,6 @@ let input = Input();
 })
 export class MovieListItemComponent {
   @Input() movie1?: Movies;
+  // @Input() movie!: Movies;
 
 }
