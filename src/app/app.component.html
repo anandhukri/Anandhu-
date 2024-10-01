@@ -1,29 +1,6 @@
 <html>
 <main>
-<div class="container">
-  <h1> Movies list</h1>
-  <div >
-    <h2>Movies I watched</h2>
-    <div *ngFor="let movie of movie1">
-      <h3 *ngIf="movie.alreadyWatched">{{movie.name}}</h3>
-      <p *ngIf="movie.alreadyWatched">Production company: {{movie.productionCompany}} </p>
-      <p *ngIf="movie.alreadyWatched">Director: {{movie.director}}</p>
-      <p *ngIf="movie.alreadyWatched">Country: {{movie.country}}</p>
-      <p *ngIf="movie.alreadyWatched">Year: {{movie.year}}</p>
-    </div>
-    <h2>Movies I did not watch</h2>
-    <div *ngFor="let movie of movie1">
-      <h3 *ngIf="!movie.alreadyWatched">{{movie.name}}</h3>
-      <p *ngIf="!movie.alreadyWatched">Production company: {{movie.productionCompany}} </p>
-      <p *ngIf="!movie.alreadyWatched">Director: {{movie.director}}</p>
-      <p *ngIf="!movie.alreadyWatched">Country: {{movie.country}}</p>
-      <p *ngIf="!movie.alreadyWatched">Year: {{movie.year}}</p>
-    </div>
-  </div>
-
-
-
-</div>
+<app-movie-list></app-movie-list>
 </main>
 
 </html>
