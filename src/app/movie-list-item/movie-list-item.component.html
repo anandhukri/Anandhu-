@@ -1,11 +1,10 @@
-<html>
+
 <main>
-  <div class="container">
-    <div >
+  <div style="border: 2px solid black;" [ngStyle]="{'background-color': condition ? 'pink' : 'teal'}">
+    <div>
       <h2>{{movie1?.name}}</h2>
-      <p>Already watched : {{movie1?.alreadyWatched}}</p>
-      <p>{{movie1?.director}}</p>
-      </div>
+      <p>Already watched: {{movie1?.alreadyWatched ? 'Yes' : 'No'}}</p>
+      <p>Director: {{movie1?.director}}</p>
+    </div>
   </div>
 </main>
-</html>
