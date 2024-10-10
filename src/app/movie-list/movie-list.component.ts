@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Movies} from "../Shared/Models/movies";
 import {MovieListItemComponent} from "../movie-list-item/movie-list-item.component";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-movie-list',
@@ -9,6 +9,7 @@ import {NgForOf} from "@angular/common";
   imports: [
     MovieListItemComponent,
     NgForOf,
+    NgStyle,
   ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.css'
@@ -22,5 +23,6 @@ export class MovieListComponent {
     {name:"Spiderman",director:"Sam Raimi",productionCompany:"marvel",country:"America",year:2024, alreadyWatched: false}
 
   ]
+  condition: any;
 
 }

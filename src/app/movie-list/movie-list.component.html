@@ -1,3 +1,6 @@
-<app-movie-list-item *ngFor="let movie of movie1" [movie1] ="movie"></app-movie-list-item>
+<!--//<app-movie-list-item *ngFor="let movie of movie1" [movie1]="movie"></app-movie-list-item>-->
 
-
+<div [ngStyle]="{'background-color': condition ? 'pink' : 'teal', 'border': '2px solid black', 'padding': '20px'}">
+  <h1>Movie List</h1>
+  <app-movie-list-item *ngFor="let movie of movie1" [movie1]="movie"></app-movie-list-item>
+</div>
