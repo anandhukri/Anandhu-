@@ -9,3 +9,5 @@ export const movie1: Movies [] = [ {name:"Barroz",director:"Mohenlal",production
   {name:"Spiderman",director:"Sam Raimi",productionCompany:"marvel",country:"America",year:2024, alreadyWatched: false}
 
 ]
+
+

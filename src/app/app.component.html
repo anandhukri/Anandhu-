@@ -1,6 +1,47 @@
-<html>
-<main>
-<app-movie-list></app-movie-list>
-</main>
+<!--<html>-->
+<!--<main>-->
+<!--<app-movie-list></app-movie-list>-->
+<!--</main>-->
 
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title>
+</head>
+<body>
+
+<main>
+  <!--  <div>-->
+  <!--    <h2>Project List</h2>-->
+  <!--    <h3>Finished Projects</h3>-->
+  <!--    <div *ngFor="let project of projectList">-->
+  <!--      <h4 *ngIf="!project.isInProgress">{{project.name}}</h4>-->
+  <!--      <p *ngIf="!project.isInProgress">ID: {{ project.id }}</p>-->
+  <!--      <p *ngIf="!project.isInProgress">Language: {{ project.language }}</p>-->
+  <!--      <p *ngIf="!project.isInProgress">Platform: {{ project.platform }}</p>-->
+  <!--    </div>-->
+  <!--    <div class="divider"></div>-->
+  <!--    <h3>Projects In Progress</h3>-->
+  <!--    <div *ngFor="let project of projectList">-->
+  <!--      <h4 *ngIf="project.isInProgress">{{project.name}}</h4>-->
+  <!--      <p *ngIf="project.isInProgress">ID: {{ project.id }}</p>-->
+  <!--      <p *ngIf="project.isInProgress">Language: {{ project.language }}</p>-->
+  <!--      <p *ngIf="project.isInProgress">Platform: {{ project.platform }}</p>-->
+  <!--    </div>-->
+  <!--  </div>-->
+<!--  <app-project-list-item [movie1]="selectedMovie"></app-project-list-item>-->
+<!--  <app-project-list></app-project-list>-->
+
+  <app-movie-list-item [movie1]="SelectedMovie" ></app-movie-list-item>
+  <app-movie-list></app-movie-list>
+
+
+</main>
+<footer>
+
+</footer>
+</body>
 </html>
