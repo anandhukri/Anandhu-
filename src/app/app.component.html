@@ -1,13 +1,13 @@
-<!--<html>-->
-<!--<main>-->
-<!--<app-movie-list></app-movie-list>-->
-<!--</main>-->
-
-<!--</html>-->
-
 
 <!DOCTYPE html>
 <html lang="en">
+<div class="navigation-bar">
+  <nav>
+    <a routerLink = "/movies" routerLinkActive = "active">Movies List</a>
+    |
+    <a routerLink = "/modify-project" routerLinkActive = "active">Modify project</a>
+  </nav>
+</div>
 <head>
   <title>{{ title }}</title>
 </head>
@@ -35,10 +35,10 @@
 <!--  <app-project-list-item [movie1]="selectedMovie"></app-project-list-item>-->
 <!--  <app-project-list></app-project-list>-->
 
-  <app-movie-list-item [movie1]="SelectedMovie" ></app-movie-list-item>
-  <app-movie-list></app-movie-list>
+<!--  <app-movie-list-item [movie1]="SelectedMovie" ></app-movie-list-item>-->
+<!--  <app-movie-list></app-movie-list>-->
 
-
+<router-outlet></router-outlet>
 </main>
 <footer>
 

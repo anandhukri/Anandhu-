@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {Movies} from "./Shared/Models/movies";
 import {NgForOf, NgIf} from "@angular/common";
 import {MovieListComponent} from "./movie-list/movie-list.component";
@@ -10,7 +10,7 @@ import {MovieListItemComponent} from "./movie-list-item/movie-list-item.componen
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, MovieListComponent, MovieListItemComponent],
+  imports: [RouterOutlet, NgForOf, NgIf, MovieListComponent, MovieListItemComponent, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
