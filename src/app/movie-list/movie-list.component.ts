@@ -5,6 +5,7 @@ import {NgForOf} from "@angular/common";
 import {movie1} from "../data/mock-content";
 import {MovieService} from "../services/movie.service";
 
+
 @Component({
   selector: 'app-movie-list',
   standalone: true,
@@ -41,5 +42,6 @@ export class MovieListComponent implements OnInit{
   }
 
 
+  //protected readonly movie1 = movie1;
   protected readonly movie1 = movie1;
 }

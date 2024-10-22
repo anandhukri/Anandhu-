@@ -1,10 +1,33 @@
+<!--<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.productionCompany % 2 === 0 ? 'pink' : 'teal'}">-->
+<!--<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.director % 2 === 0 ? 'pink' : 'teal'}"><div style="border: 2px;" [ngStyle]="{'background-color' : (!movie1 || movie1.alreadyWatched) ? 'pink' : 'teal'}">-->
+<!--<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.name % 2 === 0 ? 'pink' : 'teal'}">-->
+<!--<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.year % 2 === 0 ? 'pink' : 'teal'}">-->
 
-<main>
-  <div style="border: 2px solid black;" [ngStyle]="{'background-color': condition ? 'pink' : 'teal'}">
-    <div>
-      <h2>{{movie1?.name}}</h2>
-      <p>Already watched: {{movie1?.alreadyWatched ? 'Yes' : 'No'}}</p>
-      <p>Director: {{movie1?.director}}</p>
+<!--<h1>{{movie1?.name}}</h1>-->
+<!--      <p>Already watched: {{movie1?.alreadyWatched ? 'Yes' : 'No'}}</p>-->
+<!--      <p>Director: {{movie1?.director}}</p>-->
+<!--      <p>Country: {{movie1?.country}}</p>-->
+<!--      <p>year Realsed: {{movie1?.year}}</p>-->
+<!--    </div>-->
+<!--    </div>-->
+
+<!--    </div>-->
+<!--    </div>-->
+<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.productionCompany ? 'pink' : 'teal'}">
+  <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.director ? 'pink' : 'teal'}">
+    <div style="border: 2px;" [ngStyle]="{'background-color' : (!movie1 || movie1.alreadyWatched) ? 'pink' : 'teal'}">
+      <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.name ? 'pink' : 'teal'}">
+        <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.year % 2 === 0 ? 'pink' : 'teal'}">
+
+          <h1>{{movie1?.name}}</h1>
+          <img src="/Users/macbookananduhu/PhpstormProjects/Anandhu-NEW/src/app/images/movieimage.jpeg">
+          <p>Already watched: {{movie1?.alreadyWatched ? 'Yes' : 'No'}}</p>
+          <p>Director: {{movie1?.director}}</p>
+          <p>Country: {{movie1?.country}}</p>
+          <p>Year Released: {{movie1?.year}}</p>
+        </div>
+      </div>
     </div>
   </div>
-</main>
+</div>
+

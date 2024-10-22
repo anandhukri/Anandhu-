@@ -7,4 +7,5 @@ export interface Movies {
   year : number ;
   alreadyWatched? : boolean;
 
+
 }

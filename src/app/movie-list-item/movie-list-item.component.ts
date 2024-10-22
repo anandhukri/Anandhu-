@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input,OnInit} from '@angular/core';
 import {Movies} from "../Shared/Models/movies";
 import {NgForOf, NgIf, NgFor, NgStyle} from "@angular/common";
 
@@ -17,6 +17,6 @@ let input = Input();
 export class MovieListItemComponent {
   @Input() movie1?: Movies;
   // @Input() movie!: Movies;
-  condition: any;
+ // condition: any;
 
 }
