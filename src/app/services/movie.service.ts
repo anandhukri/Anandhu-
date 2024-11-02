@@ -34,10 +34,22 @@ export class MovieService {
     return of(this.movies); // Return an observable that emits the movie array
   }
 
-  getMovieByName(movieName: string): Observable<Movies | any> {
-    const foundMovie = this.movies.find(movie => movie.name === movieName);
-    return of(foundMovie)
+
+
+
+
+
+  // getMovieByName(movieName: string): Observable<Movies | any> {
+  //   const foundMovie = this.movies.find(movie => movie.name === movieName);
+  //   return of(foundMovie)
+  // }
+
+  getMovieById(id: number): Observable<Movies | undefined> {
+    const movie = this.movies.find(movie => movie.id === id);
+    return of(movie);
   }
+
+
 
   addMovie(newMovie:Movies) : Observable<Movies[]>{
     this.movies.push(newMovie)
