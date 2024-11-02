@@ -57,7 +57,7 @@ export class MovieService {
   }
 
   updateMovie(updatedMovie: Movies):Observable<Movies[]>{
-    const index = this.movies.findIndex(movie1 => movie1.name === updatedMovie.name);
+    const index = this.movies.findIndex(movie1 => movie1.id === updatedMovie.id);
     if(index !== -1){
       this.movies[index] =updatedMovie;
     }
@@ -65,11 +65,10 @@ export class MovieService {
 
   }
 
-  deleteMovie(movieName: string): Observable<Movies[]>{
-    this.movies = this.movies.filter(movie1 => movie1.name !== movieName);
-    return of (this.movies);
+  deleteMovie(movieId: number): Observable<Movies[]> {
+    this.movies = this.movies.filter(movie => movie.id !== movieId);
+    return of(this.movies);
   }
-
 
 
 }
