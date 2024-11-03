@@ -1,3 +1,13 @@
-<app-movie-list-item *ngFor="let movie of movie1" [movie1] ="movie"></app-movie-list-item>
+
+<ul>
+  <li *ngFor="let movie of movieList">
+    <span>{{ movie.name }} ({{ movie.year }})</span>
+    <app-movie-list-item [movie1]="movie"></app-movie-list-item>
+    <button (click)="editMovie(movie.id)">Edit</button>
+    <button (click)="deleteMovie(movie.id)">Delete</button>
+  </li>
+</ul>
+
+
 
 
