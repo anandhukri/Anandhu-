@@ -1,0 +1,62 @@
+<p>form works!</p>
+
+<form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
+  <h2>{{ isEditMode ? 'Edit Movie' : 'Add Movie' }}</h2>
+
+  <div>
+    <label for="id">ID:</label>
+    <input id="id" formControlName="id" type="number" />
+    <div *ngIf="getControl('id').invalid && (getControl('id').dirty || getControl('id').touched)">
+      <div *ngIf="getControl('id').errors?.required">ID is required.</div>
+      <div *ngIf="getControl('id').errors?.min">ID must be a positive number.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+    <div *ngIf="getControl('name').invalid && (getControl('name').dirty || getControl('name').touched)">
+      <div *ngIf="getControl('name').errors?.required">Name is required.</div>
+      <div *ngIf="getControl('name').errors?.maxlength">Name cannot exceed 100 characters.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="director">Director:</label>
+    <input id="director" formControlName="director" type="text" />
+    <div *ngIf="getControl('director').invalid && (getControl('director').dirty || getControl('director').touched)">
+      <div *ngIf="getControl('director').errors?.required">Director is required.</div>
+    </div>
+  </div>
+
+<!--  <div>-->
+<!--    <label for="productionCompany">Production Company:</label>-->
+<!--    <input id="productionCompany" formControlName="productionCompany" type="text" />-->
+<!--    <div *ngIf="getControl('productionCompany').invalid && (getControl('productionCompany').dirty || getControl('productionCompany').touched)">-->
+<!--      <div *ngIf="getControl('productionCompany').errors?.required">Production Company is required.</div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div>
+    <label for="year">Year:</label>
+    <input id="year" formControlName="year" type="number" />
+    <div *ngIf="getControl('year').invalid && (getControl('year').dirty || getControl('year').touched)">
+      <div *ngIf="getControl('year').errors?.required">Year is required.</div>
+      <div *ngIf="getControl('year').errors?.min">Year must be at least 1888.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="alreadyWatched">Already Watched:</label>
+    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" />
+  </div>
+
+  <button type="submit" [disabled]="contentForm.invalid">{{ isEditMode ? 'Update Movie' : 'Add Movie' }}</button>
+  <button type="button" (click)="contentForm.reset()">Reset</button>
+
+
+
+  <div *ngIf="formSubmissionSuccess">
+    <p>Movie {{ isEditMode ? 'updated' : 'added' }} successfully!</p>
+  </div>
+</form>

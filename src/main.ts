@@ -11,13 +11,16 @@ import {NgModule} from "@angular/core";
 
 
 
+
 const routes: Routes =[
   {path: '',redirectTo: '/', pathMatch: 'full',},
   {path: 'movies',component: MovieListComponent},
-  //{path: 'movies/:name', component: MovieListItemComponent},
+  {path: 'movies/:name', component: MovieListItemComponent},
   {path: 'modify-list-item/id', component: MovieListItemComponent},
   {path: 'modify-movie', component: ModifyListItemComponent},
   {path: 'nothing', component: PageNotFoundComponent},
+  { path: 'modify-list-item/:id', component: ModifyListItemComponent }
+
 
 ];
 @NgModule({imports: [RouterModule.forRoot(routes)],
@@ -29,5 +32,7 @@ bootstrapApplication(AppComponent, {
   providers: [provideRouter(routes)]
 })
   .catch((err) => console.error(err));
+
+
 
 

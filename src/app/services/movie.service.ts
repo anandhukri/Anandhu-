@@ -108,9 +108,14 @@ export class MovieService {
     const index = this.movies.findIndex(movie => movie.id === updatedMovie.id);
     if (index !== -1) {
       this.movies[index] = updatedMovie;
+      console.log('Updated movie:', this.movies[index]); // Log the updated movie
+    } else {
+      console.log('Movie not found with ID:', updatedMovie.id); // Log if movie is not found
     }
     return of(this.movies);
   }
+
+
 
   deleteMovie(movieId: number): Observable<Movies[]> {
     this.movies = this.movies.filter(movie => movie.id !== movieId);
