@@ -1,3 +1,4 @@
+
 <p>form works!</p>
 
 <form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
@@ -29,14 +30,6 @@
     </div>
   </div>
 
-<!--  <div>-->
-<!--    <label for="productionCompany">Production Company:</label>-->
-<!--    <input id="productionCompany" formControlName="productionCompany" type="text" />-->
-<!--    <div *ngIf="getControl('productionCompany').invalid && (getControl('productionCompany').dirty || getControl('productionCompany').touched)">-->
-<!--      <div *ngIf="getControl('productionCompany').errors?.required">Production Company is required.</div>-->
-<!--    </div>-->
-<!--  </div>-->
-
   <div>
     <label for="year">Year:</label>
     <input id="year" formControlName="year" type="number" />
@@ -53,8 +46,6 @@
 
   <button type="submit" [disabled]="contentForm.invalid">{{ isEditMode ? 'Update Movie' : 'Add Movie' }}</button>
   <button type="button" (click)="contentForm.reset()">Reset</button>
-
-
 
   <div *ngIf="formSubmissionSuccess">
     <p>Movie {{ isEditMode ? 'updated' : 'added' }} successfully!</p>

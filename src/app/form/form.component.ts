@@ -1,124 +1,4 @@
-// import { Component } from '@angular/core';
-//
-// @Component({
-//   selector: 'app-form',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: './form.component.html',
-//   styleUrl: './form.component.css'
-// })
-// export class FormComponent {
-//
-// }
 
-//
-// import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
-// import { MovieService } from '../services/movie.service';
-// import { Movies } from '../Shared/Models/movies';
-// import {ActivatedRoute} from "@angular/router";
-// import {movie1} from "../data/mock-content";
-//
-// @Component({
-//   selector: 'app-form',
-//   standalone: true,
-//   templateUrl: './form.component.html',
-//   imports: [
-//     ReactiveFormsModule
-//   ],
-//   styleUrls: ['./form.component.css']
-// })
-// export class FormComponent implements OnInit {
-//   private route: ActivatedRoute | undefined;
-//
-//
-//   contentForm: FormGroup;
-//   formSubmissionSuccess: boolean = false;
-//   isEditMode: boolean = false;
-//   movieToEditId: number | null = null;
-//   moviesList: Movies[] = [];
-//
-//   constructor(public formBuilder: FormBuilder, private movieService: MovieService) {
-//     this.contentForm = this.formBuilder.group({
-//       id: ['', [Validators.required, Validators.min(1)]],
-//       name: ['', [Validators.required, Validators.maxLength(100)]],
-//       director: ['', Validators.required],
-//       //productionCompany: ['', Validators.required],
-//       year: ['', [Validators.required, Validators.min(1888)]],
-//       alreadyWatched: [false]
-//     });
-//   }
-//
-//   ngOnInit(): void {
-//     this.route.paramMap.subscribe(params => {
-//       const movieId = +params.get('id');
-//       if (movieId) {
-//         this.isEditMode = true;
-//         this.loadMovies(movieId)
-//       }
-//     })
-//
-//
-//    // this.loadMovies();
-//   }
-//
-//   // loadMovies() {
-//   //   this.movieService.getMovies().subscribe(movies => {
-//   //     this.moviesList = movies;
-//   //   });
-//   // }
-//
-//   loadMovies(id: number) {
-//     this.movieService.getMovieById(id).subscribe(movie => {
-//       this.contentForm.patchValue(movie1);
-//     })
-//   }
-//
-//   onSubmit() {
-//     console.log('Submit triggered'); // Debugging console log
-//
-//     if (this.contentForm.valid) {
-//       const newMovie: Movies = this.contentForm.value;
-//
-//       if (this.isEditMode) {
-//         this.movieService.updateMovie(newMovie).subscribe(() => {
-//           console.log('Movie updated:', newMovie);
-//           this.isEditMode = false;
-//           this.movieToEditId = null;
-//         });
-//       } else {
-//         this.movieService.addMovie(newMovie).subscribe(() => {
-//           console.log('Movie added:', newMovie);
-//         });
-//       }
-//
-//       this.contentForm.reset();
-//       this.formSubmissionSuccess = true;
-//       this.loadMovies();
-//     } else {
-//       console.log('Form is invalid');
-//       this.formSubmissionSuccess = false;
-//     }
-//   }
-//
-//   onEdit(movie: Movies) {
-//     console.log('Editing movie:', movie); // Debugging console log
-//     this.contentForm.patchValue(movie);
-//     this.isEditMode = true;
-//     this.movieToEditId = movie.id;
-//   }
-//
-//   onDelete(movieId: number) {
-//     this.movieService.deleteMovie(movieId).subscribe(() => {
-//       console.log('Movie deleted with ID:', movieId);
-//       this.loadMovies();
-//     });
-//   }
-//
-//   getControl(controlName: string): AbstractControl {
-//     return this.contentForm.get(controlName) as AbstractControl;
-//   }
-// }
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
 import { MovieService } from '../services/movie.service';
@@ -156,7 +36,6 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      // @ts-ignore
       const movieId = +params.get('id');
       if (movieId) {
         this.isEditMode = true;
@@ -168,8 +47,10 @@ export class FormComponent implements OnInit {
   loadMovie(id: number) {
     this.movieService.getMovieById(id).subscribe(movie => {
       if (movie) {
-        this.movieToEditId = movie.id; // Save the ID for later use
-        this.contentForm.patchValue(movie); // Patch the form with movie data
+        this.movieToEditId = movie.id;
+        this.contentForm.patchValue(movie);
+      } else {
+        console.error('Movie not found for ID:', id);
       }
     }, error => {
       console.error('Error loading movie:', error);
@@ -177,27 +58,33 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit triggered'); // Debugging console log
+    console.log('Submit triggered');
 
     if (this.contentForm.valid) {
       const newMovie: Movies = this.contentForm.value;
 
-      // Set the ID from the form for updates
       if (this.isEditMode) {
-        newMovie.id = this.movieToEditId!; // Ensure the ID is set for editing
+        // Ensure the ID is set for updating
+        if (this.movieToEditId !== null) {
+          newMovie.id = this.movieToEditId;
+        }
+
+        // Call the update service method
         this.movieService.updateMovie(newMovie).subscribe(() => {
           console.log('Movie updated:', newMovie);
           this.formSubmissionSuccess = true;
-          this.isEditMode = false; // Reset edit mode
-          this.contentForm.reset(); // Reset the form
+          this.isEditMode = false;
+          this.contentForm.reset();
+          this.movieToEditId = null;
         }, error => {
           console.error('Error updating movie:', error);
         });
       } else {
+
         this.movieService.addMovie(newMovie).subscribe(() => {
           console.log('Movie added:', newMovie);
           this.formSubmissionSuccess = true;
-          this.contentForm.reset(); // Reset the form after adding
+          this.contentForm.reset();
         }, error => {
           console.error('Error adding movie:', error);
         });
