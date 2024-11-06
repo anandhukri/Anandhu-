@@ -99,3 +99,4 @@ export class FormComponent implements OnInit {
     return this.contentForm.get(controlName) as AbstractControl;
   }
 }
+

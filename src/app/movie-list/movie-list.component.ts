@@ -119,10 +119,7 @@ export class MovieListComponent implements OnInit {
     });
   }
 
-  // editMovie(movieId: number) {
-  //   console.log('Redirecting to edit movie with ID:', movieId); // Debug log
-  //   this.router.navigate(['/modify-list-item', movieId]); // Ensure the route matches your routing configuration
-  // }
+
   editMovie(movieId: number) {
     console.log('Redirecting to edit movie with ID:', movieId); // Debug log
     this.router.navigate(['/modify-list-item', movieId]);

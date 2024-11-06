@@ -3,44 +3,27 @@
   <div>
     <label for="id">ID:</label>
     <input id="id" formControlName="id" type="number" />
-    <div *ngIf="movieForm.get('id')?.invalid && movieForm.get('id')?.touched">
-      <small *ngIf="movieForm.get('id')?.errors?.['required']">ID is required.</small>
-      <small *ngIf="movieForm.get('id')?.errors?.['min']">ID must be a positive number.</small>
-    </div>
+
   </div>
 
   <div>
     <label for="name">Name:</label>
     <input id="name" formControlName="name" />
-    <div *ngIf="movieForm.get('name')?.invalid && movieForm.get('name')?.touched">
-      <small *ngIf="movieForm.get('name')?.errors?.['required']">Name is required.</small>
-      <small *ngIf="movieForm.get('name')?.errors?.['maxlength']">Name cannot exceed 100 characters.</small>
-    </div>
+
   </div>
 
   <div>
     <label for="director">Director:</label>
     <input id="director" formControlName="director" />
-    <div *ngIf="movieForm.get('director')?.invalid && movieForm.get('director')?.touched">
-      <small *ngIf="movieForm.get('director')?.errors?.['required']">Director is required.</small>
-    </div>
+
   </div>
 
-  <div>
-    <label for="productionCompany">Production Company:</label>
-    <input id="productionCompany" formControlName="productionCompany" />
-    <div *ngIf="movieForm.get('productionCompany')?.invalid && movieForm.get('productionCompany')?.touched">
-      <small *ngIf="movieForm.get('productionCompany')?.errors?.['required']">Production Company is required.</small>
-    </div>
-  </div>
+
 
   <div>
     <label for="year">Year:</label>
     <input id="year" formControlName="year" type="number" />
-    <div *ngIf="movieForm.get('year')?.invalid && movieForm.get('year')?.touched">
-      <small *ngIf="movieForm.get('year')?.errors?.['required']">Year is required.</small>
-      <small *ngIf="movieForm.get('year')?.errors?.['min']">Year must be greater than 1888.</small>
-    </div>
+
   </div>
 
   <div>

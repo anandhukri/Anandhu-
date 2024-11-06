@@ -1,3 +1,57 @@
+//
+// import { Injectable } from '@angular/core';
+// import { Observable, of } from 'rxjs';
+// import { movie1 } from '../data/mock-content';
+// import { Movies } from '../Shared/Models/movies';
+//
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class MovieService {
+//   private movies: Movies[] = movie1;
+//
+//   constructor() { }
+//
+//
+//   getMovies(): Observable<Movies[]> {
+//     return of(this.movies);
+//   }
+//
+//   getMovieById(id: number): Observable<Movies | undefined> {
+//     const movie = this.movies.find(movie => movie.id === id);
+//     return of(movie);
+//   }
+//
+//   addMovie(newMovie: Movies): Observable<Movies[]> {
+//     this.movies.push(newMovie);
+//     return of(this.movies);
+//   }
+//
+//
+//
+//   updateMovie(updatedMovie: Movies): Observable<Movies | undefined> {
+//     const index = this.movies.findIndex(movie => movie.id === updatedMovie.id);
+//     if (index !== -1) {
+//       this.movies[index] = updatedMovie;
+//       console.log('Updated movie:', this.movies[index]);
+//       return of(this.movies[index]); // Return only the updated movie
+//     } else {
+//       console.log('Movie not found with ID:', updatedMovie.id);
+//       return of(undefined);
+//     }
+//   }
+//
+//
+//
+//
+//   deleteMovie(movieId: number): Observable<Movies[]> {
+//     this.movies = this.movies.filter(movie => movie.id !== movieId);
+//     return of(this.movies);
+//   }
+// }
+//
+//
+//
 
 
 import { Injectable } from '@angular/core';
@@ -12,7 +66,6 @@ export class MovieService {
   private movies: Movies[] = movie1;
 
   constructor() { }
-
 
   getMovies(): Observable<Movies[]> {
     return of(this.movies);
@@ -36,7 +89,7 @@ export class MovieService {
     } else {
       console.log('Movie not found with ID:', updatedMovie.id);
     }
-    return of(this.movies);
+    return of(this.movies); // Return the updated list
   }
 
   deleteMovie(movieId: number): Observable<Movies[]> {
@@ -44,3 +97,5 @@ export class MovieService {
     return of(this.movies);
   }
 }
+
+
