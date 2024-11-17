@@ -3,10 +3,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Movies } from "../Shared/Models/movies";
 import { MovieListItemComponent } from "../movie-list-item/movie-list-item.component";
-import { NgForOf } from "@angular/common";
+import {CurrencyPipe, DatePipe, NgForOf, UpperCasePipe} from "@angular/common";
 import { MovieService } from "../services/movie.service";
 import { Router } from '@angular/router';
 import { movie1 } from "../data/mock-content";
+import {FullMovieDetailsPipe} from "../Pipes/full-movie-details.pipe";
 
 @Component({
   selector: 'app-movie-list',
@@ -14,6 +15,10 @@ import { movie1 } from "../data/mock-content";
   imports: [
     MovieListItemComponent,
     NgForOf,
+    DatePipe,
+    UpperCasePipe,
+    CurrencyPipe,
+    FullMovieDetailsPipe,
   ],
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
@@ -57,8 +62,6 @@ export class MovieListComponent implements OnInit {
       });
     }
   }
-
-
 
   protected readonly movie1 = movie1;
 }

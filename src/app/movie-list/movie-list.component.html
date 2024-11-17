@@ -1,16 +1,54 @@
+<!--<div *ngIf="errorMessage" class="error-message">-->
+<!--  {{ errorMessage }}-->
+<!--</div>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let movie of movieList">-->
+<!--    -->
+<!--    <span>{{ movie.name }} ({{ movie.year }})</span>-->
+<!--    <app-movie-list-item [movie1]="movie"></app-movie-list-item>-->
+<!--    <button (click)="editMovie(movie.id)">Edit</button>-->
+<!--    <button (click)="deleteMovie(movie.id)">Delete</button>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<div *ngIf="errorMessage" class="error-message">-->
+<!--  {{ errorMessage }}-->
+<!--</div>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let movie of movieList">-->
+<!--    <h3>{{ movie.name }} ({{ movie.year }})</h3>-->
+<!--&lt;!&ndash;    <p>{{ movie | fullMovieDetails }}</p> &ndash;&gt;-->
+
+<!--    <p>Director: {{ movie.director }}</p>-->
+<!--    <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p> &lt;!&ndash; DatePipe &ndash;&gt;-->
+<!--    <p>Genre: {{ movie.genre | uppercase }}</p> &lt;!&ndash; UpperCasePipe &ndash;&gt;-->
+<!--    <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p> &lt;!&ndash; CurrencyPipe &ndash;&gt;-->
+<!--    <img [src]="movie.image" [alt]="movie.name" [width]="movie.imageWidth" [height]="movie.imageHeight" />-->
+<!--    <button (click)="editMovie(movie.id)">Edit</button>-->
+<!--    <button (click)="deleteMovie(movie.id)">Delete</button>-->
+<!--  </li>-->
+<!--</ul>-->
+
+
 <div *ngIf="errorMessage" class="error-message">
   {{ errorMessage }}
 </div>
 
 <ul>
   <li *ngFor="let movie of movieList">
-    <span>{{ movie.name }} ({{ movie.year }})</span>
-    <app-movie-list-item [movie1]="movie"></app-movie-list-item>
+    <h3>{{ movie.name }} ({{ movie.year }})</h3>
+
+    <!-- Using the custom pipe for full movie details -->
+    <p>{{ movie | fullMovieDetails }}</p> <!-- Custom Pipe for movie name + director -->
+
+    <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p> <!-- DatePipe -->
+    <p>Genre: {{ movie.genre | uppercase }}</p> <!-- UpperCasePipe -->
+    <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p> <!-- CurrencyPipe -->
+
+    <img [src]="movie.image" [alt]="movie.name" [width]="movie.imageWidth" [height]="movie.imageHeight" />
     <button (click)="editMovie(movie.id)">Edit</button>
     <button (click)="deleteMovie(movie.id)">Delete</button>
   </li>
 </ul>
-
-
-
-

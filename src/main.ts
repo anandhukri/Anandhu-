@@ -10,6 +10,7 @@ import { MovieListComponent } from './app/movie-list/movie-list.component';
 import { MovieListItemComponent } from './app/movie-list-item/movie-list-item.component';
 import { ModifyListItemComponent } from './app/modify-list-item/modify-list-item.component';
 import { PageNotFoundComponent } from './app/page-not-found/page-not-found.component';
+import {FullMovieDetailsPipe} from "./app/Pipes/full-movie-details.pipe";
 
 // Routes
 const routes: Routes = [
@@ -25,9 +26,11 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
+    FullMovieDetailsPipe
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  declarations: []
 })
 export class AppRoutingModule {}
 
