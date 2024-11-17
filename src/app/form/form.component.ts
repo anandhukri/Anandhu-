@@ -19,6 +19,8 @@ export class FormComponent implements OnInit {
   formSubmissionSuccess: boolean = false;
   isEditMode: boolean = false;
   movieToEditId: number | null = null;
+  errorMessage: string = 'error';
+
 
   constructor(
     public formBuilder: FormBuilder,
@@ -95,8 +97,10 @@ export class FormComponent implements OnInit {
     }
   }
 
-  getControl(controlName: string): AbstractControl {
-    return this.contentForm.get(controlName) as AbstractControl;
-  }
-}
+//
+//   getControl(controlName: string): AbstractControl {
+//     return this.contentForm.get(controlName) as AbstractControl;
+//   }
+// }
 
+}

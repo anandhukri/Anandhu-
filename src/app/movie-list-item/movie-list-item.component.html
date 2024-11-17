@@ -15,6 +15,7 @@
 
           <div *ngIf="movie1">
             <h3>{{ movie1.name }}</h3>
+            <img [src]="movie1?.image" [width]="imageWidth" [height]="imageHeight">
             <p>Director: {{ movie1.director }}</p>
             <p>Year: {{ movie1.year }}</p>
             <p>Already Watched: {{ movie1.alreadyWatched ? 'Yes' : 'No' }}</p>

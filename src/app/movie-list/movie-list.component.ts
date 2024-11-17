@@ -26,22 +26,13 @@ export class MovieListComponent implements OnInit {
   constructor(private movieService: MovieService, private router: Router) { }
 
   ngOnInit() {
-
-    this.getMovies();
-  }
-  getMovies() {
     this.movieService.getMovies().subscribe({
-      next: (data: Movies[]) => {
-        this.movieList = data;
-        console.log("fetched");
-      },
-      error: (err) => {
-        console.log(err);
-        this.errorMessage = ' failed to load movies' ;
-      }
+      next: (data: Movies[]) => this.movieList = data,
+      error: err => console.error("Error fetching movies", err),
+      complete: () => console.log("Movies data fetch completed")
     })
-
   }
+
 
 
   editMovie(movieId: number) {

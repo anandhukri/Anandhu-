@@ -5,6 +5,9 @@ export interface Movies {
   productionCompany : string;
   year : number ;
   alreadyWatched? : boolean;
+  image : string;
+  imageWidth: number;
+  imageHeight: number;
 
 
 }

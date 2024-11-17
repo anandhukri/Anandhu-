@@ -14,9 +14,17 @@ let input = Input();
   templateUrl: './movie-list-item.component.html',
   styleUrl: './movie-list-item.component.css'
 })
-export class MovieListItemComponent {
+export class MovieListItemComponent implements OnInit {
+
   @Input() movie1?: Movies;
-  // @Input() movie!: Movies;
- // condition: any;
+  imageWidth: number =20;
+  imageHeight: number =20;
+
+  ngOnInit() {
+    if (this.movie1 ) {
+      this.imageWidth = this.movie1.imageWidth || this.imageWidth;
+      this.imageHeight = this.movie1.imageHeight || this.imageHeight;
+    }
+  }
 
 }
