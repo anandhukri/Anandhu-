@@ -4,7 +4,7 @@ import { AppComponent } from './app/app.component';
 import { provideRouter, RouterModule, Routes } from '@angular/router';
 import {HttpClientModule, provideHttpClient} from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './app/services/in-memory-data.service'; // Ensure this path is correct
+import { InMemoryDataService } from './app/in-memory-data.service'; // Ensure this path is correct
 import {importProvidersFrom, NgModule} from '@angular/core';
 import { MovieListComponent } from './app/movie-list/movie-list.component';
 import { MovieListItemComponent } from './app/movie-list-item/movie-list-item.component';

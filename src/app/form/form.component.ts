@@ -38,6 +38,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
+      // @ts-ignore
       const movieId = +params.get('id');
       if (movieId) {
         this.isEditMode = true;
@@ -97,10 +98,5 @@ export class FormComponent implements OnInit {
     }
   }
 
-//
-//   getControl(controlName: string): AbstractControl {
-//     return this.contentForm.get(controlName) as AbstractControl;
-//   }
-// }
 
 }
