@@ -1,36 +1,96 @@
-/*.page-not-found {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  height: 100vh;*/
-/*  background-color: #f9f9f9;*/
-/*  padding: 20px;*/
-/*}*/
+/* General form styles */
+form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
 
-/*.page-not-found h1 {*/
-/*  font-size: 4rem;*/
-/*  color: #e63946;*/
-/*  margin-bottom: 20px;*/
-/*}*/
+/* Form header */
+p {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
-/*.page-not-found p {*/
-/*  font-size: 1.5rem;*/
-/*  color: #6a0572;*/
-/*  margin-bottom: 15px;*/
-/*}*/
+/* Label styling */
+form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
 
-/*.page-not-found a {*/
-/*  font-size: 1.2rem;*/
-/*  color: #1d3557;*/
-/*  padding: 10px 20px;*/
-/*  background-color: #a8dadc;*/
-/*  border-radius: 5px;*/
-/*  text-decoration: none;*/
-/*  transition: background-color 0.3s ease;*/
-/*}*/
+/* Input and select fields */
+form input[type="text"],
+form input[type="number"],
+form input[type="checkbox"] {
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
 
-/*.page-not-found a:hover {*/
-/*  background-color: #457b9d;*/
-/*  color: white;*/
-/*}*/
+form input[type="checkbox"] {
+  width: auto;
+}
+
+/* Focus state */
+form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Div spacing for form fields */
+form div {
+  margin-bottom: 15px;
+}
+
+/* Submit button styling */
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+form button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Form layout adjustments */
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form div label {
+  flex: 1;
+  text-align: left;
+}
+
+form div input {
+  flex: 2;
+}

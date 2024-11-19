@@ -1,9 +1,6 @@
 
 <p>form works!</p>
 
-<!--<div *ngIf="errorMessage" class="error">-->
-<!--  {{ errorMessage }}-->
-<!--</div>-->
 
 <form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
   <h2>{{ isEditMode ? 'Edit Movie' : 'Add Movie' }}</h2>

@@ -1,61 +1,54 @@
-/*!*.page-not-found {*!*/
-/*!*  text-align: center;*!*/
-/*!*  margin-top: 50px;*!*/
-/*!*}*!*/
+/* Page Not Found container */
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;  /* Full height of the viewport */
+  background-color: #f7f7f7;
+  padding: 20px;
+}
 
-/*!*.page-not-found h1 {*!*/
-/*!*  font-size: 3rem;*!*/
-/*!*  color: #ff4d4d;*!*/
-/*!*}*!*/
+/* Heading styling */
+.page-not-found h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e74c3c;  /* Red color for emphasis */
+  margin-bottom: 20px;
+}
 
-/*!*.page-not-found p {*!*/
-/*!*  font-size: 1.5rem;*!*/
-/*!*  color: #a51b9e;*!*/
-/*!*}*!*/
+/* Image styling for the page not found image */
+.page-not-found img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-/*!*.page-not-found a {*!*/
-/*!*  font-size: 1.2rem;*!*/
-/*!*  color: #007bff;*!*/
-/*!*  text-decoration: none;*!*/
-/*!*}*!*/
+/* Paragraph styling */
+.page-not-found p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+}
 
-/*!*.page-not-found a:hover {*!*/
-/*!*  text-decoration: underline;*!*/
-/*!*}*!*/
+/* Styling for the link */
+.page-not-found a {
+  font-size: 18px;
+  color: #3498db; /* Blue color for the link */
+  text-decoration: none;
+  font-weight: bold;
+}
 
-/*.page-not-found {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  height: 100vh;*/
-/*  background-color: #f9f9f9;*/
-/*  padding: 20px;*/
-/*}*/
+.page-not-found a:hover {
+  color: #2980b9;  /* Darker blue on hover */
+  text-decoration: underline;
+}
 
-/*.page-not-found h1 {*/
-/*  font-size: 4rem;*/
-/*  color: #e63946;*/
-/*  margin-bottom: 20px;*/
-/*}*/
-
-/*.page-not-found p {*/
-/*  font-size: 1.5rem;*/
-/*  color: #6a0572;*/
-/*  margin-bottom: 15px;*/
-/*}*/
-
-/*.page-not-found a {*/
-/*  font-size: 1.2rem;*/
-/*  color: #1d3557;*/
-/*  padding: 10px 20px;*/
-/*  background-color: #a8dadc;*/
-/*  border-radius: 5px;*/
-/*  text-decoration: none;*/
-/*  transition: background-color 0.3s ease;*/
-/*}*/
-
-/*.page-not-found a:hover {*/
-/*  background-color: #457b9d;*/
-/*  color: white;*/
-/*}*/
+/* Optional styling for a slight box shadow effect on the container */
+.page-not-found {
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}

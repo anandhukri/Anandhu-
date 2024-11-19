@@ -17,9 +17,17 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'movies', component: MovieListComponent },
   { path: 'movies/:name', component: MovieListItemComponent },
-  { path: 'modify-list-item/:id', component: ModifyListItemComponent },
-  { path: 'modify-movie', component: ModifyListItemComponent },
-  { path: 'nothing', component: PageNotFoundComponent }
+
+  {path: 'movies/:id',
+  loadComponent: () =>
+  import('./app/movie-list-item/movie-list-item.component').then(m => m.MovieListItemComponent)}, //Lazy Loaded
+
+  //{ path: 'modify-list-item/:id', component: ModifyListItemComponent },
+  { path: 'modify-movie',
+    loadComponent: () =>
+      import('./app/modify-list-item/modify-list-item.component').then(m => m.ModifyListItemComponent)},
+
+  { path: 'nothing', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -32,6 +40,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
+
 export class AppRoutingModule {}
 
 bootstrapApplication(AppComponent, {
