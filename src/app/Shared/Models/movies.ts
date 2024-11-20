@@ -8,6 +8,8 @@ export interface Movies {
   image : string;
   imageWidth: number;
   imageHeight: number;
+
+
   releaseDate: string; // New field for DatePipe
   budget: number; // New field for CurrencyPipe
   genre: string; // New field for UpperCasePipe

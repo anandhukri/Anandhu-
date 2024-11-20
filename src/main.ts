@@ -14,6 +14,7 @@ import {FullMovieDetailsPipe} from "./app/Pipes/full-movie-details.pipe";
 
 // Routes
 const routes: Routes = [
+
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'movies', component: MovieListComponent },
   { path: 'movies/:name', component: MovieListItemComponent },
@@ -22,12 +23,14 @@ const routes: Routes = [
   loadComponent: () =>
   import('./app/movie-list-item/movie-list-item.component').then(m => m.MovieListItemComponent)}, //Lazy Loaded
 
-  //{ path: 'modify-list-item/:id', component: ModifyListItemComponent },
+  { path: 'modify-list-item/:id', component: ModifyListItemComponent },
+
+
   { path: 'modify-movie',
     loadComponent: () =>
       import('./app/modify-list-item/modify-list-item.component').then(m => m.ModifyListItemComponent)},
 
-  { path: 'nothing', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -47,7 +50,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(),
     provideRouter(routes),
-    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 })) // Import providers dynamically
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 }))
 
   ]
 }).catch((err) => console.error(err));

@@ -43,9 +43,14 @@
     <!-- Using the custom pipe for full movie details -->
     <p>{{ movie | fullMovieDetails }}</p> <!-- Custom Pipe for movie name + director -->
 
+
+
     <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p> <!-- DatePipe -->
     <p>Genre: {{ movie.genre | uppercase }}</p> <!-- UpperCasePipe -->
     <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p> <!-- CurrencyPipe -->
+
+
+
 
     <img [src]="movie.image" [alt]="movie.name" [width]="movie.imageWidth" [height]="movie.imageHeight" />
     <button (click)="editMovie(movie.id)">Edit</button>
