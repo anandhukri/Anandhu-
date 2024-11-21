@@ -1,36 +1,16 @@
-<!--&lt;!&ndash;<div *ngIf="errorMessage" class="error-message">&ndash;&gt;-->
-<!--&lt;!&ndash;  {{ errorMessage }}&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<div *ngIf="errorMessage" class="error-message">-->
+<!--  {{ errorMessage }}-->
+<!--</div>-->
 
-<!--&lt;!&ndash;<ul>&ndash;&gt;-->
-<!--&lt;!&ndash;  <li *ngFor="let movie of movieList">&ndash;&gt;-->
-<!--&lt;!&ndash;    &ndash;&gt;-->
-<!--&lt;!&ndash;    <span>{{ movie.name }} ({{ movie.year }})</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <app-movie-list-item [movie1]="movie"></app-movie-list-item>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button (click)="editMovie(movie.id)">Edit</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button (click)="deleteMovie(movie.id)">Delete</button>&ndash;&gt;-->
-<!--&lt;!&ndash;  </li>&ndash;&gt;-->
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<div *ngIf="errorMessage" class="error-message">&ndash;&gt;-->
-<!--&lt;!&ndash;  {{ errorMessage }}&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<ul>&ndash;&gt;-->
-<!--&lt;!&ndash;  <li *ngFor="let movie of movieList">&ndash;&gt;-->
-<!--&lt;!&ndash;    <h3>{{ movie.name }} ({{ movie.year }})</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;    <p>{{ movie | fullMovieDetails }}</p> &ndash;&gt;&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <p>Director: {{ movie.director }}</p>&ndash;&gt;-->
-<!--&lt;!&ndash;    <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p> &lt;!&ndash; DatePipe &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;    <p>Genre: {{ movie.genre | uppercase }}</p> &lt;!&ndash; UpperCasePipe &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;    <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p> &lt;!&ndash; CurrencyPipe &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;    <img [src]="movie.image" [alt]="movie.name" [width]="movie.imageWidth" [height]="movie.imageHeight" />&ndash;&gt;-->
-<!--&lt;!&ndash;    <button (click)="editMovie(movie.id)">Edit</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button (click)="deleteMovie(movie.id)">Delete</button>&ndash;&gt;-->
-<!--&lt;!&ndash;  </li>&ndash;&gt;-->
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-
+<!--<ul>-->
+<!--  <li *ngFor="let movie of movieList">-->
+<!--    -->
+<!--    <span>{{ movie.name }} ({{ movie.year }})</span>-->
+<!--    <app-movie-list-item [movie1]="movie"></app-movie-list-item>-->
+<!--    <button (click)="editMovie(movie.id)">Edit</button>-->
+<!--    <button (click)="deleteMovie(movie.id)">Delete</button>-->
+<!--  </li>-->
+<!--</ul>-->
 
 <!--<div *ngIf="errorMessage" class="error-message">-->
 <!--  {{ errorMessage }}-->
@@ -39,19 +19,12 @@
 <!--<ul>-->
 <!--  <li *ngFor="let movie of movieList">-->
 <!--    <h3>{{ movie.name }} ({{ movie.year }})</h3>-->
+<!--&lt;!&ndash;    <p>{{ movie | fullMovieDetails }}</p> &ndash;&gt;-->
 
-<!--    &lt;!&ndash; Using the custom pipe for full movie details &ndash;&gt;-->
-<!--    <p>{{ movie | fullMovieDetails }}</p> &lt;!&ndash; Custom Pipe for movie name + director &ndash;&gt;-->
-
-
-
+<!--    <p>Director: {{ movie.director }}</p>-->
 <!--    <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p> &lt;!&ndash; DatePipe &ndash;&gt;-->
 <!--    <p>Genre: {{ movie.genre | uppercase }}</p> &lt;!&ndash; UpperCasePipe &ndash;&gt;-->
 <!--    <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p> &lt;!&ndash; CurrencyPipe &ndash;&gt;-->
-
-
-
-
 <!--    <img [src]="movie.image" [alt]="movie.name" [width]="movie.imageWidth" [height]="movie.imageHeight" />-->
 <!--    <button (click)="editMovie(movie.id)">Edit</button>-->
 <!--    <button (click)="deleteMovie(movie.id)">Delete</button>-->
@@ -59,12 +32,26 @@
 <!--</ul>-->
 
 
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
 <ul>
-  <li *ngFor="let movie of movieList" [appHoverHighlight]="'lightblue'">
+  <li *ngFor="let movie of movieList">
     <h3>{{ movie.name }} ({{ movie.year }})</h3>
-    <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p>
-    <p>Genre: {{ movie.genre | uppercase }}</p>
-    <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p>
+
+    <!-- Using the custom pipe for full movie details -->
+    <p>{{ movie | fullMovieDetails }}</p> <!-- Custom Pipe for movie name + director -->
+
+
+
+    <p>Release Date: {{ movie.releaseDate | date:'fullDate' }}</p> <!-- DatePipe -->
+    <p>Genre: {{ movie.genre | uppercase }}</p> <!-- UpperCasePipe -->
+    <p>Budget: {{ movie.budget | currency:'USD':'symbol' }}</p> <!-- CurrencyPipe -->
+
+
+
+
     <img [src]="movie.image" [alt]="movie.name" [width]="movie.imageWidth" [height]="movie.imageHeight" />
     <button (click)="editMovie(movie.id)">Edit</button>
     <button (click)="deleteMovie(movie.id)">Delete</button>
