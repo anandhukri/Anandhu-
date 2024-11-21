@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-images',
+  selector: 'app-image',
   standalone: true,
   imports: [],
   templateUrl: './images.component.html',

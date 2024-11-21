@@ -1,5 +1,4 @@
 
-
 import { Component, OnInit } from '@angular/core';
 import { Movies } from "../Shared/Models/movies";
 import { MovieListItemComponent } from "../movie-list-item/movie-list-item.component";
@@ -8,6 +7,7 @@ import { MovieService } from "../services/movie.service";
 import { Router } from '@angular/router';
 import { movie1 } from "../data/mock-content";
 import {FullMovieDetailsPipe} from "../Pipes/full-movie-details.pipe";
+import {HoverHighlightDirective} from "../hover-highlight.directive";
 
 @Component({
   selector: 'app-movie-list',
@@ -19,6 +19,7 @@ import {FullMovieDetailsPipe} from "../Pipes/full-movie-details.pipe";
     UpperCasePipe,
     CurrencyPipe,
     FullMovieDetailsPipe,
+    HoverHighlightDirective,
   ],
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
