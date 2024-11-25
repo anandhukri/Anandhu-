@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractContro
 import { MovieService } from '../services/movie.service';
 import { Movies } from '../Shared/Models/movies';
 import { ActivatedRoute } from "@angular/router";
-import {HighlightOnFocusDirective} from "../highlight-on-focus-directive.directive";
 
 @Component({
   selector: 'app-form',
@@ -12,7 +11,7 @@ import {HighlightOnFocusDirective} from "../highlight-on-focus-directive.directi
   templateUrl: './form.component.html',
   imports: [
     ReactiveFormsModule,
-    HighlightOnFocusDirective
+
   ],
   styleUrls: ['./form.component.css']
 })

@@ -2,19 +2,19 @@
 <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="id">ID:</label>
-    <input id="id" formControlName="id" type="number" />
-
+    <input id="id" formControlName="id" type="number" [appHighlightOnFocus]="'lightyellow'"/>
   </div>
 
   <div>
+
     <label for="name">Name:</label>
-    <input id="name" formControlName="name" />
+    <input id="name" formControlName="name" [appHighlightOnFocus]="'lightgreen'" />
 
   </div>
 
   <div>
     <label for="director">Director:</label>
-    <input id="director" formControlName="director" />
+    <input id="director" formControlName="director" [appHighlightOnFocus]="'lightblue'"/>
 
   </div>
 
@@ -22,13 +22,14 @@
 
   <div>
     <label for="year">Year:</label>
-    <input id="year" formControlName="year" type="number" />
+    <input id="year" formControlName="year" type="number" [appHighlightOnFocus]="'lightyellow'"/>
 
   </div>
 
   <div>
+
     <label for="alreadyWatched">Already Watched:</label>
-    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" />
+    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" [appHighlightOnFocus]="'lightyellow'"/>
   </div>
 
   <button type="submit" [disabled]="movieForm.invalid">Submit</button>

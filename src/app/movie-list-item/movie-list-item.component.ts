@@ -1,7 +1,7 @@
 import {Component, Input,OnInit} from '@angular/core';
 import {Movies} from "../Shared/Models/movies";
 import {NgForOf, NgIf, NgFor, NgStyle} from "@angular/common";
-import {HoverHighlightDirective} from "../hover-highlight.directive";
+// import {HoverHighlightDirective} from "../hover-highlight.directive";
 
 let input = Input();
 
@@ -10,7 +10,7 @@ let input = Input();
   standalone: true,
   imports: [
     NgForOf, NgFor,
-    NgIf, NgStyle, HoverHighlightDirective
+    NgIf, NgStyle,
   ],
   templateUrl: './movie-list-item.component.html',
   styleUrl: './movie-list-item.component.css'

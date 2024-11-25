@@ -1,84 +1,44 @@
 
-<!--<p>form works!</p>-->
+<p>form works!</p>
 
-
-<!--<form [formGroup]="contentForm" (ngSubmit)="onSubmit()">-->
-<!--  <h2>{{ isEditMode ? 'Edit Movie' : 'Add Movie' }}</h2>-->
-
-<!--  <div>-->
-<!--    <label for="id">ID:</label>-->
-<!--    <input id="id" formControlName="id" type="number" />-->
-
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label for="name">Name:</label>-->
-<!--    <input id="name" formControlName="name" type="text" />-->
-
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label for="director">Director:</label>-->
-<!--    <input id="director" formControlName="director" type="text" />-->
-
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label for="year">Year:</label>-->
-<!--    <input id="year" formControlName="year" type="number" />-->
-
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label for="alreadyWatched">Already Watched:</label>-->
-<!--    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" />-->
-<!--  </div>-->
-
-<!--  <button type="submit" [disabled]="contentForm.invalid">{{ isEditMode ? 'Update Movie' : 'Add Movie' }}</button>-->
-<!--  <button type="button" (click)="contentForm.reset()">Reset</button>-->
-
-<!--  <div *ngIf="formSubmissionSuccess">-->
-<!--    <p>Movie {{ isEditMode ? 'updated' : 'added' }} successfully!</p>-->
-<!--  </div>-->
-<!--</form>-->
-
-
-<p>Form works!</p>
 
 <form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
   <h2>{{ isEditMode ? 'Edit Movie' : 'Add Movie' }}</h2>
 
   <div>
     <label for="id">ID:</label>
-    <input id="id" formControlName="id" type="number" [appHighlightOnFocus]="'blue'" />
+    <input id="id" formControlName="id" type="number"/>
+
   </div>
 
   <div>
     <label for="name">Name:</label>
-    <input id="name" formControlName="name" type="text" [appHighlightOnFocus]="'purple'" />
+    <input id="name" formControlName="name" type="text"/>
+
   </div>
 
   <div>
     <label for="director">Director:</label>
-    <input id="director" formControlName="director" type="text" [appHighlightOnFocus]="'green'" />
+    <input id="director" formControlName="director" type="text" />
+
   </div>
 
   <div>
     <label for="year">Year:</label>
-    <input id="year" formControlName="year" type="number" [appHighlightOnFocus]="'orange'" />
+    <input id="year" formControlName="year" type="number" />
+
   </div>
 
   <div>
     <label for="alreadyWatched">Already Watched:</label>
-    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" [appHighlightOnFocus]="'red'" />
+    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" />
   </div>
 
-  <button type="submit" [disabled]="contentForm.invalid">
-    {{ isEditMode ? 'Update Movie' : 'Add Movie' }}
-  </button>
+  <button type="submit" [disabled]="contentForm.invalid">{{ isEditMode ? 'Update Movie' : 'Add Movie' }}</button>
   <button type="button" (click)="contentForm.reset()">Reset</button>
 
   <div *ngIf="formSubmissionSuccess">
     <p>Movie {{ isEditMode ? 'updated' : 'added' }} successfully!</p>
   </div>
 </form>
+

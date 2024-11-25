@@ -8,6 +8,8 @@ import { MovieService } from "../services/movie.service";
 import { Router } from '@angular/router';
 import { movie1 } from "../data/mock-content";
 import {FullMovieDetailsPipe} from "../Pipes/full-movie-details.pipe";
+import {HoverHighlightDirective} from "../hover-highlight.directive";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-movie-list',
@@ -19,6 +21,10 @@ import {FullMovieDetailsPipe} from "../Pipes/full-movie-details.pipe";
     UpperCasePipe,
     CurrencyPipe,
     FullMovieDetailsPipe,
+    HoverHighlightDirective,
+    HighlightOnFocusDirective,
+
+
   ],
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
