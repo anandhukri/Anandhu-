@@ -6,6 +6,7 @@ import { Movies } from '../Shared/Models/movies';
 import { ActivatedRoute } from '@angular/router';
 import { NgIf } from "@angular/common";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-modify-list-item',
@@ -14,7 +15,8 @@ import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.direct
     ReactiveFormsModule,
     NgIf,
     FormsModule,
-    HighlightOnFocusDirective
+    HighlightOnFocusDirective,
+    MatInputModule
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrls: ['./modify-list-item.component.css']

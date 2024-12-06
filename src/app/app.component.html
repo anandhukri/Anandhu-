@@ -1,23 +1,8 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<div class="navigation-bar">
-  <nav>
-    <a routerLink = "/movies" routerLinkActive = "active">Movies List</a>|
-    <a routerLink = "/modify-movie" routerLinkActive = "active">Modify project</a>
-  </nav>
-</div>
-<head>
-  <title>{{ title }}</title>
-</head>
-<body>
-
-<main>
+<mat-toolbar color="primary">
+  <span>Web Guys Online Auction</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/movies" routerLinkActive="active">Movies List</button>
+  <button mat-button routerLink="/modify-movie" routerLinkActive="active">Modify Movie</button>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
-</main>
-<footer>
-
-</footer>
-</body>
-</html>

@@ -1,34 +1,50 @@
 
-<!--<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.productionCompany ? 'pink' : 'teal'}">-->
-<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.id ? 'pink' : 'teal'}">
-  <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.director ? 'pink' : 'teal'}">
-    <div style="border: 2px;" [ngStyle]="{'background-color' : (!movie1 || movie1.alreadyWatched) ? 'pink' : 'teal'}">
-      <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.name ? 'pink' : 'teal'}">
-        <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.year % 2 === 0 ? 'pink' : 'teal'}">
+<!--&lt;!&ndash;<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.productionCompany ? 'pink' : 'teal'}">&ndash;&gt;-->
+<!--<div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.id ? 'pink' : 'teal'}">-->
+<!--  <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.director ? 'pink' : 'teal'}">-->
+<!--    <div style="border: 2px;" [ngStyle]="{'background-color' : (!movie1 || movie1.alreadyWatched) ? 'pink' : 'teal'}">-->
+<!--      <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || movie1.name ? 'pink' : 'teal'}">-->
+<!--        <div style="border: 2px;" [ngStyle]="{'background-color' : !movie1 || +movie1.year % 2 === 0 ? 'pink' : 'teal'}">-->
 
-<!--          <h1>{{movie1?.name}}</h1>-->
-<!--          <img src="/Users/macbookananduhu/PhpstormProjects/Anandhu-NEW/src/app/image/movieimage.jpeg" alt="">-->
-<!--          <p>Id: {{movie1?.id}}</p>-->
-<!--          <p>Already watched: {{movie1?.alreadyWatched ? 'Yes' : 'No'}}</p>-->
-<!--          <p>Director: {{movie1?.director}}</p>-->
-<!--          <p>Year Released: {{movie1?.year}}</p>-->
+<!--&lt;!&ndash;          <h1>{{movie1?.name}}</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;          <img src="/Users/macbookananduhu/PhpstormProjects/Anandhu-NEW/src/app/image/movieimage.jpeg" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;          <p>Id: {{movie1?.id}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p>Already watched: {{movie1?.alreadyWatched ? 'Yes' : 'No'}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p>Director: {{movie1?.director}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p>Year Released: {{movie1?.year}}</p>&ndash;&gt;-->
 
-          <div *ngIf="movie1 " >
-            <h3>{{ movie1.name }}</h3>
-<!--            <li *ngFor="let movie of movieList" [appHoverHighlight]="'lightblue'">-->
+<!--          <div *ngIf="movie1 " >-->
+<!--            <h3>{{ movie1.name }}</h3>-->
+<!--&lt;!&ndash;            <li *ngFor="let movie of movieList" [appHoverHighlight]="'lightblue'">&ndash;&gt;-->
 
-            <img [src]="movie1?.image" [width]="imageWidth" [height]="imageHeight">
-            <p>Director: {{ movie1.director }}</p>
-            <p>Year: {{ movie1.year }}</p>
-            <p>Already Watched: {{ movie1.alreadyWatched ? 'Yes' : 'No' }}</p>
-          </div>
+<!--            <img [src]="movie1?.image" [width]="imageWidth" [height]="imageHeight">-->
+<!--            <p>Director: {{ movie1.director }}</p>-->
+<!--            <p>Year: {{ movie1.year }}</p>-->
+<!--            <p>Already Watched: {{ movie1.alreadyWatched ? 'Yes' : 'No' }}</p>-->
+<!--          </div>-->
 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
+
+
+<mat-card *ngIf="movie1">
+  <mat-card-header>
+    <mat-card-title>{{ movie1.name }} ({{ movie1.year }})</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ movie1 | fullMovieDetails }}</p>
+    <p>Release Date: {{ movie1.releaseDate | date:'fullDate' }}</p>
+    <p>Genre: {{ movie1.genre | uppercase }}</p>
+    <p>Budget: {{ movie1.budget | currency:'USD':'symbol' }}</p>
+    <img mat-card-image [src]="movie1.image" [alt]="movie1.name" [width]="movie1.imageWidth" [height]="movie1.imageHeight" />
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="editMovie(movie1.id)" matTooltip="Edit movie details">Edit</button>
+    <button mat-raised-button color="warn" (click)="deleteMovie(movie1.id)" matTooltip="Delete movie">Delete</button>
+  </mat-card-actions>
+</mat-card>

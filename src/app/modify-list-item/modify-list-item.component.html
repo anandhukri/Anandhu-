@@ -1,37 +1,37 @@
 <p>Modify List Item works!</p>
+
 <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="id">ID:</label>
-    <input id="id" formControlName="id" type="number" [appHighlightOnFocus]="'lightyellow'"/>
-  </div>
-
-
-  <div>
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name" [appHighlightOnFocus]="'lightgreen'" />
-
+    <mat-form-field appearance="fill">
+      <mat-label>ID:</mat-label>
+      <input matInput id="id" formControlName="id" type="number" [appHighlightOnFocus]="'lightyellow'" matTooltip="Enter the movie ID" />
+    </mat-form-field>
   </div>
 
   <div>
-    <label for="director">Director:</label>
-    <input id="director" formControlName="director" [appHighlightOnFocus]="'lightblue'"/>
-
-  </div>
-
-
-
-  <div>
-    <label for="year">Year:</label>
-    <input id="year" formControlName="year" type="number" [appHighlightOnFocus]="'lightyellow'"/>
-
+    <mat-form-field appearance="fill">
+      <mat-label>Name:</mat-label>
+      <input matInput id="name" formControlName="name" [appHighlightOnFocus]="'lightgreen'" matTooltip="Enter the movie name" />
+    </mat-form-field>
   </div>
 
   <div>
-
-    <label for="alreadyWatched">Already Watched:</label>
-    <input id="alreadyWatched" formControlName="alreadyWatched" type="checkbox" [appHighlightOnFocus]="'lightyellow'"/>
+    <mat-form-field appearance="fill">
+      <mat-label>Director:</mat-label>
+      <input matInput id="director" formControlName="director" [appHighlightOnFocus]="'lightblue'" matTooltip="Enter the director's name" />
+    </mat-form-field>
   </div>
 
-  <button type="submit" [disabled]="movieForm.invalid">Submit</button>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Year:</mat-label>
+      <input matInput id="year" formControlName="year" type="number" [appHighlightOnFocus]="'lightyellow'" matTooltip="Enter the movie year" />
+    </mat-form-field>
+  </div>
 
+  <div>
+    <mat-checkbox formControlName="alreadyWatched" matTooltip="Check if you have watched the movie">Already Watched</mat-checkbox>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="movieForm.invalid">Submit</button>
 </form>

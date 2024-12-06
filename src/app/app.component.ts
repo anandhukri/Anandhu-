@@ -6,11 +6,13 @@ import {MovieListComponent} from "./movie-list/movie-list.component";
 import {MovieService} from "./services/movie.service";
 import {movie1} from "./data/mock-content";
 import {MovieListItemComponent} from "./movie-list-item/movie-list-item.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, MovieListComponent, MovieListItemComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, NgForOf, NgIf, MovieListComponent, MovieListItemComponent, RouterLink, RouterLinkActive, MatToolbarModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
